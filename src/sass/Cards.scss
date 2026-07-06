@@ -1,0 +1,245 @@
+.cards__item {
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    width: 100%;
+    max-width: 290px;
+    height: 444px;
+    background: var(--card-bg);
+    margin-top: 30px;
+    user-select: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border-color);
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+        width: 100%;
+        height: 315px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    &-title {
+        margin-top: 16px;
+        font-size: 1rem;
+        font-weight: 600;
+        flex: 1;
+        color: var(--text-primary);
+    }
+
+    &-price_btn {
+        display: flex;
+        margin-top: 12px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &-prices {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &-price {
+        font-weight: 700;
+        font-size: 0.95rem;
+
+        &--sale {
+            color: #e53935;
+        }
+
+        &--old {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            text-decoration: line-through;
+            font-weight: 400;
+        }
+    }
+
+    &-btn {
+        max-width: 96px;
+        width: 100%;
+        padding: 8px 12px;
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+
+.cards__badge {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 1;
+
+    &--sale {
+        background: #e53935;
+        color: #fff;
+    }
+
+    &--new {
+        background: #43a047;
+        color: #fff;
+        left: auto;
+        right: 22px;
+    }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+    .cards__item {
+        max-width: 100%;
+        height: 380px;
+        padding: 12px;
+        margin-top: 20px;
+
+        img {
+            height: 250px;
+        }
+
+        &-title {
+            font-size: 0.95rem;
+            margin-top: 12px;
+        }
+
+        &-price {
+            font-size: 0.9rem;
+
+            &--old {
+                font-size: 0.75rem;
+            }
+        }
+
+        &-btn {
+            max-width: 80px;
+            padding: 6px 10px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .cards__badge {
+        top: 16px;
+        left: 16px;
+        padding: 3px 8px;
+        font-size: 0.7rem;
+
+        &--new {
+            right: 16px;
+        }
+    }
+}
+
+// Mobile landscape
+@media (max-width: 768px) {
+    .cards__item {
+        max-width: 100%;
+        height: 340px;
+        padding: 12px;
+        margin-top: 16px;
+
+        img {
+            height: 200px;
+        }
+
+        &-title {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        &-price_btn {
+            margin-top: 10px;
+            gap: 6px;
+        }
+
+        &-price {
+            font-size: 0.85rem;
+
+            &--old {
+                font-size: 0.7rem;
+            }
+        }
+
+        &-btn {
+            max-width: 70px;
+            padding: 6px 8px;
+            font-size: 0.8rem;
+        }
+    }
+
+    .cards__badge {
+        top: 12px;
+        left: 12px;
+        padding: 2px 6px;
+        font-size: 0.65rem;
+
+        &--new {
+            right: 12px;
+        }
+    }
+}
+
+// Mobile portrait
+@media (max-width: 480px) {
+    .cards__item {
+        max-width: 100%;
+        height: 300px;
+        padding: 10px;
+        margin-top: 12px;
+
+        img {
+            height: 170px;
+        }
+
+        &-title {
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        &-price {
+            font-size: 0.8rem;
+
+            &--old {
+                font-size: 0.65rem;
+            }
+        }
+
+        &-btn {
+            max-width: 60px;
+            padding: 5px 8px;
+            font-size: 0.75rem;
+        }
+    }
+
+    .cards__badge {
+        top: 10px;
+        left: 10px;
+        padding: 2px 5px;
+        font-size: 0.6rem;
+
+        &--new {
+            right: 10px;
+        }
+    }
+}

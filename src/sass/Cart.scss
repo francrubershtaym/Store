@@ -1,0 +1,247 @@
+.cart {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+    padding-bottom: 60px;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__summary {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 24px;
+        height: fit-content;
+        position: sticky;
+        top: 100px;
+        border: 1px solid var(--border-color);
+    }
+
+    &__summary-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        color: var(--text-primary);
+    }
+
+    &__summary-total {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+    }
+}
+
+.cart-empty,
+.checkout-success {
+    text-align: center;
+    padding: 60px 15px;
+
+    p {
+        margin-bottom: 16px;
+        color: var(--text-secondary);
+    }
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto auto;
+    gap: 16px;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+
+    &__image img {
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    &__title {
+        font-weight: 600;
+        color: var(--text-primary);
+
+        &:hover {
+            color: var(--text-secondary);
+        }
+    }
+
+    &__price {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-top: 4px;
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__qty-btn {
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background: var(--bg-secondary);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-primary);
+        transition: background 0.2s;
+
+        &:hover {
+            background: var(--bg-tertiary);
+        }
+    }
+
+    &__total {
+        font-weight: 700;
+        min-width: 100px;
+        text-align: right;
+        color: var(--text-primary);
+    }
+
+    &__remove {
+        background: none;
+        border: none;
+        color: #999;
+        font-size: 1.1rem;
+        cursor: pointer;
+        padding: 4px 8px;
+
+        &:hover {
+            color: #e53935;
+        }
+    }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+    .cart {
+        grid-template-columns: 1fr 280px;
+        gap: 24px;
+
+        &__summary {
+            top: 80px;
+            padding: 20px;
+        }
+
+        &__summary-title {
+            font-size: 1.1rem;
+        }
+
+        &__summary-total {
+            font-size: 1.3rem;
+        }
+    }
+
+    .cart-item {
+        gap: 12px;
+        padding: 12px;
+
+        &__qty-btn {
+            width: 28px;
+            height: 28px;
+            font-size: 0.95rem;
+        }
+
+        &__price {
+            font-size: 0.85rem;
+        }
+
+        &__total {
+            min-width: 80px;
+            font-size: 0.95rem;
+        }
+    }
+}
+
+// Mobile landscape
+@media (max-width: 768px) {
+    .cart {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-bottom: 40px;
+
+        &__summary {
+            position: static;
+            top: auto;
+            order: 2;
+        }
+
+        &__items {
+            order: 1;
+        }
+    }
+
+    .cart-item {
+        grid-template-columns: 60px 1fr auto;
+        gap: 10px;
+        padding: 10px;
+
+        &__image img {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__quantity,
+        &__remove {
+            display: none;
+        }
+
+        &__title {
+            font-size: 0.9rem;
+        }
+
+        &__total {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// Mobile portrait
+@media (max-width: 480px) {
+    .cart {
+        padding-bottom: 30px;
+
+        &__summary {
+            padding: 16px;
+        }
+
+        &__summary-title {
+            font-size: 1rem;
+        }
+
+        &__summary-total {
+            font-size: 1.2rem;
+        }
+    }
+
+    .cart-item {
+        grid-template-columns: 50px 1fr;
+
+        &__image img {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+
+        &__title {
+            font-size: 0.85rem;
+        }
+
+        &__total {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 0.85rem;
+        }
+    }
+}
